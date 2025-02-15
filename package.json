@@ -1,0 +1,46 @@
+{
+  "name": "git-repo-loader",
+  "version": "1.0.0",
+  "description": "A lightweight library to fetch and stream GitHub repository content efficiently with rate-limit handling.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iHiteshAgrawal/git-repo-loader"
+  },
+  "files": [
+    "dist"
+  ],
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "clean": true,
+    "format": "esm",
+    "dts": true
+  },
+  "keywords": [
+    "github",
+    "repository",
+    "fetch",
+    "stream",
+    "typescript",
+    "rate-limit",
+    "api"
+  ],
+  "author": "Hitesh Agrawal <https://github.com/iHiteshAgrawal>",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "21.1.1",
+    "safe-calls": "1.0.3",
+    "tsup": "8.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.4",
+    "typescript": "5.7.3"
+  }
+}
