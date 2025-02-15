@@ -1,12 +1,13 @@
 {
   "name": "git-repo-loader",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A lightweight library to fetch and stream GitHub repository content efficiently with rate-limit handling.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
