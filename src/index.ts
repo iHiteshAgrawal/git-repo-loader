@@ -3,7 +3,7 @@ import { RateLimitConfig, RateLimitManager } from "safe-calls";
 
 export type OutputFormat = "json" | "string" | "buffer";
 
-export class GitHubRepoFetcher {
+export class GitHubRepoLoader {
     private octokit: Octokit;
     private rateLimitManager: RateLimitManager;
     private ignoredFiles: Set<string>;

@@ -27,9 +27,9 @@ yarn add git-repo-loader
 ### Fetch entire repository content
 
 ```ts
-import { GitHubRepoFetcher } from "git-repo-loader";
+import { GitHubRepoLoader } from "git-repo-loader";
 
-const fetcher = new GitHubRepoFetcher("your_github_token", {
+const fetcher = new GitHubRepoLoader("your_github_token", {
   concurrency: 50,
   intervalMs: 3600000, // 1 hour
   requestsPerInterval: 5000, // 5000 for authenticated requests, 60 for non-authenticated
@@ -51,9 +51,9 @@ const fetcher = new GitHubRepoFetcher("your_github_token", {
 ### Stream repository content (for large repos)
 
 ```ts
-import { GitHubRepoFetcher } from "git-repo-loader";
+import { GitHubRepoLoader } from "git-repo-loader";
 
-const fetcher = new GitHubRepoFetcher("your_github_token", {
+const fetcher = new GitHubRepoLoader("your_github_token", {
   concurrency: 50,
   intervalMs: 3600000,
   requestsPerInterval: 5000,
@@ -75,7 +75,7 @@ const fetcher = new GitHubRepoFetcher("your_github_token", {
 
 ## API
 
-### `new GitHubRepoFetcher(authToken: string)`
+### `new GitHubRepoLoader(authToken: string)`
 
 Creates a new instance with GitHub authentication.
 
