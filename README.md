@@ -29,7 +29,11 @@ yarn add git-repo-loader
 ```ts
 import { GitHubRepoFetcher } from "git-repo-loader";
 
-const fetcher = new GitHubRepoFetcher("your_github_token");
+const fetcher = new GitHubRepoFetcher("your_github_token", {
+  concurrency: 50,
+  intervalMs: 3600000, // 1 hour
+  requestsPerInterval: 5000, // 5000 for authenticated requests, 60 for non-authenticated
+});
 
 (async () => {
   const content = await fetcher.fetchRepoContent(
@@ -49,7 +53,11 @@ const fetcher = new GitHubRepoFetcher("your_github_token");
 ```ts
 import { GitHubRepoFetcher } from "git-repo-loader";
 
-const fetcher = new GitHubRepoFetcher("your_github_token");
+const fetcher = new GitHubRepoFetcher("your_github_token", {
+  concurrency: 50,
+  intervalMs: 3600000,
+  requestsPerInterval: 5000,
+});
 
 (async () => {
   for await (const [chunk] of fetcher.fetchRepoContentStream(
