@@ -10,13 +10,15 @@ export class GitHubRepoLoader {
 
     constructor(
         authToken: string,
-        {
-            concurrency = 50,
-            intervalMs = 3600000,
-            requestsPerInterval = 5000, // https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28
-            retries,
-        }: RateLimitConfig
+        options?: Partial<RateLimitConfig>
     ) {
+        const {
+            concurrency = 1,
+            intervalMs = 1000,
+            requestsPerInterval = 1,
+            retries = 3,
+        } = options || {};
+
         this.octokit = new Octokit({ auth: authToken });
 
         this.rateLimitManager = new RateLimitManager({
